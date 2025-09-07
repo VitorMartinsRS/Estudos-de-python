@@ -1,0 +1,14 @@
+n =input('informe seu nome: ')
+i = input('informe sua idade: ')
+print(100*'-')
+if n and i != None:
+    print('seu nome é ',n)
+    print('sua idade é ',i)
+    print('seu nome invertido é ',n[::-1])
+    print('seu nome tem espaços? ', ' ' in n)
+    print('sua idade ao contrario é ',i[::-1])
+    print('seu nome tem ',len(n),' letras')
+    print('a primeira letra do seu nome é ',n[0])
+    print('a última letra do seu nome é ',n[-1])
+else:
+    print('Desculpe, você deixou campos vazios')
