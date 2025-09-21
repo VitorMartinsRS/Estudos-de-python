@@ -14,12 +14,19 @@ while True:
         lista.append(item)
     elif inpt=='a':
         a=input('Informe o indice do intem que dejesa apagar: ')
-        a = int(a)
-        if a <0 or a>len(lista):
-            print('Não foi possivel apagar esse item')
-        else:
-            lista.pop(a)
+        try:
+            a = int(a)
+            if a <0 or a>len(lista):
+                print('Não foi possivel apagar esse item')
+            else:
+                lista.pop(a)
             print('Item apagado')
+        except IndexError:
+            print('Informe apenas o indice do produto existente!!!')
+        except ValueError:
+            print('Informe apenas o indice(ou seja: numeros inteiros)!!!')
+        except:
+             print('Erro não identificado')
     elif inpt=='l':
         if len(lista) == 0:
             print('Não à itens')
