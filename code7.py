@@ -1,6 +1,7 @@
 n =input('informe seu nome: ')
 i = input('informe sua idade: ')
 print(100*'-')
+print('')
 if n and i != None:
     print('seu nome é ',n)
     print('sua idade é ',i)
