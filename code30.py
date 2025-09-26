@@ -1,4 +1,4 @@
-cpf = '85402095058'
+cpf = '85202095058'
 
 # Pegar só os 9 primeiros dígitos
 nove_digito = cpf[:9]
