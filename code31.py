@@ -1,5 +1,5 @@
 
-def soma(x, y):
-    print(f'{x=}+ y={y}','|','x + y =',x+y)
+def soma(x, y, z):
+    print(f'{x=}+ y={y}+ z={z}','|','x + y + z =',x+y+z)
 
-soma(1,2)
+soma(1,2,3)
