@@ -1,6 +1,6 @@
 
 lista=[]
-lista_enum=enumerate(lista)
+lista_enum = enumerate(lista)
 lista_enum=list(enumerate(lista))
 while True:
     lista_enum=enumerate(lista)
@@ -8,11 +8,11 @@ while True:
     for i , n in lista_enum:
         print( i , n)
 
-    inpt=input('[i]nserir [a]pagar [l]istar [s]air: ')
-    if inpt == 'i':
+    leitor=input('[i]nserir [a]pagar [l]istar [s]air: ')
+    if leitor == 'i':
         item=input('O que deseja adicionar: ')
         lista.append(item)
-    elif inpt=='a':
+    elif leitor=='a':
         a=input('Informe o indice do intem que dejesa apagar: ')
         try:
             a = int(a)
@@ -27,12 +27,12 @@ while True:
             print('Informe apenas o indice(ou seja: numeros inteiros)!!!')
         except:
              print('Erro não identificado')
-    elif inpt=='l':
+    elif leitor=='l':
         if len(lista) == 0:
             print('Não à itens')
         else:
            continue
-    elif inpt =='s':
+    elif leitor =='s':
         print('Lista concluida')
         break
     else:
