@@ -1,60 +1,5 @@
-# perguntas = [
-#     {
-#         'pergunta':'Quanto é 2+2?',
-#         'alternativas':['1', '2', '3', '4'],
-#         'resposta':'4'
-#     },
-#     {
-#         'pergunta':'Quanto é 3+2?',
-#         'alternativas':['1', '5', '3', '4'],
-#         'resposta':'5'
-#     },
-#     {
-#         'pergunta':'Quanto é 6+2?',
-#         'alternativas':['8', '2', '3', '4'],
-#         'resposta':'8'
-#     },
-#     {
-#         'pergunta':'Quanto é 2*8?',
-#         'alternativas':['8', '16', '3', '4'],
-#         'resposta':'16'
-#     },
-#     {
-#         'pergunta':'Quanto é 6*2?',
-#         'alternativas':['8', '12', '3', '4'],
-#         'resposta':'12'
-#     }
-# ]
 
-# for pergunta in perguntas:
-    
-#     print(pergunta['pergunta'])
-    
-#     for i, alternativas in enumerate(pergunta['alternativas']):
-        
-#         print(f'({i}) {alternativas}')
-        
-#     qtd_alternativa = len(pergunta['alternativas'])
-   
-#     resposta=input('Qual a resposta?')
-   
-#     acerto = False
-   
-#     resposta_int =None
-    
-#     if resposta.isdigit():
-#         resposta_int=int(resposta)
-          
-#     if resposta_int != None:
-#         if resposta_int <= qtd_alternativa and resposta_int<=0:
-#             if  len(pergunta['alternativas']) == perguntas['resposta']:
-#                 acerto= True
-    
-#     if acerto:
-#         print('acertou')
-#     else:
-#         print('errou')    
-      # Exercício - sistema de perguntas e respostas
+from sqlalchemy import true
 
 
 perguntas = [
@@ -75,39 +20,33 @@ perguntas = [
     },
 ]
 
-qtd_acertos = 0
+#Esturtura de repetição que exibe a pergunta 
 for pergunta in perguntas:
-    print('Pergunta:', pergunta['Pergunta'])
+    print(pergunta['Pergunta'])
     print()
+    
+    #Esturtura de repetição que exibe as alternativas para cada pergunta 
+    opcoes=pergunta['Opções']
+    for i,opcao in enumerate(opcoes):
+        print(f'({i}){opcao}')
+        
 
-    opcoes = pergunta['Opções']
-    for i, opcao in enumerate(opcoes):
-        print(f'{i})', opcao)
-    print()
+    #Pede ao usuario para indicar o indice da resposta        
+    resposta=input('Escolha a alternativa: ')    
 
-    escolha = input('Escolha uma opção: ')
-
-    acertou = False
-    escolha_int = None
-    qtd_opcoes = len(opcoes)
-
-    if escolha.isdigit():
-        escolha_int = int(escolha)
-
-    if escolha_int is not None:
-        if escolha_int >= 0 and escolha_int < qtd_opcoes:
-            if opcoes[escolha_int] == pergunta['Resposta']:
-                acertou = True
-
-    print()
-    if acertou:
-        qtd_acertos += 1
-        print('Acertou 👍')
-    else:
-        print('Errou ❌')
-
-    print()
-
-
-print('Você acertou', qtd_acertos)
-print('de', len(perguntas), 'perguntas.')
+    acerto = False
+    resposta_int=None
+    #Verifica de ele digitou algo querente
+    if resposta.isdigit():
+        resposta_int = int(resposta)
+        #Verifica se o digito é valido  
+        if resposta_int != None and resposta_int>=0 and resposta_int<=3:
+            
+            #se o digito é valido compara com a resposta
+            if opcoes[resposta_int] == pergunta['Resposta']:
+                acerto = True
+            else:
+                print(f'Errou a resposta é {pergunta['Resposta']}')
+    if acerto:
+        print('Acertou')
+   
